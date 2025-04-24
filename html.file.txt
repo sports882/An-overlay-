@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ur">
+<head>
+  <meta charset="UTF-8">
+  <title>A Q Scorer - Editable Overlay</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .overlay {
+      text-align: center;
+      padding: 10px;
+      font-size: 20px;
+      line-height: 1.6;
+      background: rgba(0,0,0,0.6);
+      border-radius: 12px;
+      width: fit-content;
+      margin: 20px auto;
+    }
+    .match-title, .match-meta, .score-line {
+      display: block;
+      padding: 4px;
+      font-size: 20px;
+      color: white;
+    }
+    .match-title { color: #facc15; font-size: 24px; font-weight: bold; }
+    .score-line { color: #22d3ee; font-size: 26px; font-weight: bold; }
+    .input-area {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      background: rgba(15,23,42,0.9);
+      padding: 10px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    .input-area input {
+      font-size: 14px;
+      padding: 6px;
+      border-radius: 5px;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="overlay">
+  <span id="title" class="match-title">پاکستان vs بھارت</span>
+  <span id="meta" class="match-meta">T20 | نیشنل اسٹیڈیم | 22 اپریل 2025</span>
+  <span id="score" class="score-line">رنز: 134 | وکٹیں: 3 | اوورز: 15.2</span>
+</div>
+
+<div class="input-area">
+  <input type="text" placeholder="ٹیم ٹائٹل" oninput="document.getElementById('title').innerText=this.value">
+  <input type="text" placeholder="میچ کی تفصیل" oninput="document.getElementById('meta').innerText=this.value">
+  <input type="text" placeholder="اسکور لائن" oninput="document.getElementById('score').innerText=this.value">
+</div>
+
+</body>
+</html>
